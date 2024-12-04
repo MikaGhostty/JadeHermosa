@@ -1,10 +1,9 @@
 <?php
-if (isset($_GET['uid'])) {
-    $uid = $_GET['uid'];
-    // Guardar el UID en un archivo
-    file_put_contents('registros.txt', $uid . PHP_EOL, FILE_APPEND);
-    echo "UID registrado: " . $uid;
-} else {
-    echo "No se recibió UID.";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $cardNumber = $_POST['cardNumber'];
+
+    // Aquí puedes guardar los datos en una base de datos o hacer lo que necesites
+    echo "Datos recibidos: Nombre - $name, Número de Tarjeta - $cardNumber";
 }
 ?>

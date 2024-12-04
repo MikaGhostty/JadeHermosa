@@ -12,4 +12,8 @@ document.getElementById('accessForm').addEventListener('submit', function(event)
 
     // Limpiar el formulario
     this.reset();
+
+    // Mostrar los datos registrados
+    const registeredDataDiv = document.getElementById('registeredData');
+    registeredDataDiv.innerHTML += `<p>Nombre: ${name}, Número de Tarjeta: ${cardNumber}</p>`;
 });
