@@ -1,9 +1,13 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $cardNumber = $_POST['cardNumber'];
+session_start();
 
-    // Aquí puedes guardar los datos en una base de datos o hacer lo que necesites
-    echo "Datos recibidos: Nombre - $name, Número de Tarjeta - $cardNumber";
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['uid'])) {
+    $uid = $_GET['uid'];
+
+    // Aquí puedes guardar el UID en una base de datos o en un archivo
+    // Por simplicidad, solo lo mostraremos
+    echo "UID recibido: " . htmlspecialchars($uid);
+} else {
+    echo "No se recibieron datos.";
 }
 ?>
