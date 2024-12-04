@@ -13,7 +13,7 @@ const days = Object.keys(attendanceData);
 const attendances = Object.values(attendanceData);
 const ctx = document.getElementById('attendanceChart').getContext('2d');
 const attendanceChart = new Chart(ctx, {
-    type: 'line', // Cambia a 'line' para mostrar puntos
+    type: 'bar',
     data: {
         labels: days,
         datasets: [{
@@ -21,18 +21,13 @@ const attendanceChart = new Chart(ctx, {
             data: attendances,
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1,
-            fill: false,
-            pointRadius: 5, // Tamaño de los puntos
-            pointBackgroundColor: 'rgba(75, 192, 192, 1)', // Color de los puntos
-            pointBorderColor: '#fff', // Color del borde de los puntos
+            borderWidth: 1
         }]
     },
     options: {
         scales: {
             y: {
-                beginAtZero: true,
-                max: 15 // Limitar el eje Y a un máximo de 15
+                beginAtZero: true
             }
         }
     }
@@ -121,7 +116,6 @@ document.getElementById('accessForm').addEventListener('submit', function(event)
     // Obtener los valores del formulario
     const name = document.getElementById('name').value;
     const cardNumber = document.getElementById('cardNumber').value;
-
     // Mostrar un mensaje de bienvenida
     const messageDiv = document.getElementById('message');
     messageDiv.textContent = `Bienvenido, ${name}! Su número de tarjeta es ${cardNumber}.`;
@@ -134,3 +128,4 @@ document.getElementById('accessForm').addEventListener('submit', function(event)
     const registeredDataDiv = document.getElementById('registeredData');
     registeredDataDiv.innerHTML += `<p>Nombre: ${name}, Número de Tarjeta: ${cardNumber}</p>`;
 });
+   
