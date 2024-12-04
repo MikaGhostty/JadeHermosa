@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Acceso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Acceso</h1>
+        <form id="accessForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+
+            <label for="cardNumber">Número de Tarjeta:</label>
+            <input type="text" id="cardNumber" required>
+
+            <button type="submit">Registrar</button>
+        </form>
+        <div id="message" class="hidden"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
